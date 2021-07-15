@@ -1,5 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
+from datetime import datetime
+
+print("\n""\n""Zhihu start_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
 url = 'https://www.zhihu.com/billboard'
 headers = {
@@ -15,3 +18,5 @@ for item in data:
         'hotCount': item.select('.HotList-itemMetrics')[0].get_text(),
     }
     print(result)
+
+print("Zhihu end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
