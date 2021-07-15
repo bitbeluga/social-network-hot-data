@@ -3,7 +3,6 @@ import re
 import time
 import json
 import pandas as pd
-import xlsxwriter
 
 global false, null, true
 false = null = true = ''
@@ -98,7 +97,6 @@ def savetoexcel():
           len(host_fans), len(host_weibo))
 
     count = top_name.__len__()
-    print(count)
     data = {'top_name': top_name[0:count], 'top_rank': top_rank[0:count], 'top_subtitle': top_subtitle[0:count],
             'top_reading': top_reading[0:count], 'host_name': host_name[0:count], 'host_follow': host_follow[0:count],
             'host_fan': host_fans[0:count], 'host_weibpo': host_weibo[0:count]}
@@ -107,7 +105,6 @@ def savetoexcel():
 
     writer = pd.ExcelWriter(r'C:\Users\yiwang\Desktop\sina.xlsx', engine='xlsxwriter',
                             options={'strings_to_urls': False})
-    print(writer)
     dfl.to_excel(writer,
                  columns=['top_name', 'top_rank', 'top_subtitle', 'top_reading', 'host_name', 'host_follow', 'host_fan',
                           'host_weibpo'], index=False)
@@ -117,17 +114,18 @@ def savetoexcel():
 
 
 def main():
-    for i in range(1, 10):
+    for i in range(1, 8):
         print("Start...... page" + str(i))
         url = "https://d.weibo.com/231650?cfs=920&Pl_Discover_Pt6Rank__3_filter=&Pl_Discover_Pt6Rank__3_page=" + str(
             i) + "#Pl_Discover_Pt6Rank__3"
+        print(url)
         html = get_one_page(url)
         handlepage = str(html).replace('\\t', "").replace('\\n', '').replace('\\', '').replace('#', '')
         topic = handlepage.split("pt_li S_line2")
         topic.pop(0)
         for each in topic:
             analysis(each)
-        time.sleep(0.5)
+        time.sleep(1)
         savetoexcel()
 
 
