@@ -1,7 +1,5 @@
-import json
 from bs4 import BeautifulSoup
 import requests
-import re
 
 url = 'https://s.weibo.com/top/summary/summary?cate=realtimehot'
 response = requests.get(url)
