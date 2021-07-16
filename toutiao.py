@@ -10,9 +10,8 @@ headers = {
 response = requests.get(url, headers=headers)
 soup = BeautifulSoup(response.text, "lxml")
 data = soup.select(
-    '#page > div.c-d.c-d-e > div.Zd-p-Sc > div:nth-child(1) > div.cc-dc-c > div > div.jc-c > table > tbody')
+    '#page > div.c-d.c-d-e > div.Zd-p-Sc > div:nth-child(1) > div.cc-dc-c > div > div.jc-c > table > tbody > tr')
 for item in data:
-    print(item.select('tr > td')[3].get_text())
     result = {
         'rank': item.select('tr > td')[0].get_text(),
         'title': item.select('tr > td.al > a')[0].get_text(),
@@ -20,4 +19,4 @@ for item in data:
     }
     print(result)
 #
-# print("Zhihu end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+print("Toutiao end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
