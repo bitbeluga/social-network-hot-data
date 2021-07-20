@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: memcache
+Version: 0.8.0
+Summary: Memcached client for Python
+Author: An Long
+Author-email: aisk1988@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# memcache
+
+Experimental memcached client library for python. This project is in WIP status, please don't use it in production environment.
+
+Key features:
+
+- Based on memcached's new meta commands;
+- Asyncio support;
+- Type hints.
+
+## Installation
+
+```sh
+$ pip install memcache
+```
+
+## About the Project
+
+Memcache is &copy; 2020-2021 by [aisk](https://github.com/aisk).
+
+### License
+
+Memcache is distributed by a [MIT license](https://github.com/aisk/memcache/tree/master/LICENSE).
+
