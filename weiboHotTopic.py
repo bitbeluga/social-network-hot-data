@@ -15,7 +15,7 @@ host_name = []  # 发起者名字
 host_follow = []  # 发起者关注
 host_fans = []  # 话题者粉丝
 host_weibo = []  # 话题者微博数
-
+result = []
 
 def get_one_page(url):
     headers = {
