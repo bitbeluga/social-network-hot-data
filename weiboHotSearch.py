@@ -19,8 +19,8 @@ for item in data:
         continue
     result = {
         'rank': rank,
-        'hotCount': hotCount,
+        'count': hotCount,
         'title': item.select("td.td-02 > a")[0].get_text(),
-        'link': 'https://s.weibo.com/' + item.select("td.td-02 > a")[0].get('href'),
+        'url': 'https://s.weibo.com/' + item.select("td.td-02 > a")[0].get('href'),
     }
     print(result)
