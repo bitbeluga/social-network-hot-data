@@ -93,13 +93,19 @@ def analysis(topic):
 
 
 def savetoexcel():
-    print(len(top_name), len(top_rank), len(top_subtitle), len(top_reading), len(host_name), len(host_follow),
-          len(host_fans), len(host_weibo))
+    # print(len(top_name), len(top_rank), len(top_subtitle), len(top_reading), len(host_name), len(host_follow),
+    #       len(host_fans), len(host_weibo))
 
     count = top_name.__len__()
-    data = {'top_name': top_name[0:count], 'top_rank': top_rank[0:count], 'top_subtitle': top_subtitle[0:count],
-            'top_reading': top_reading[0:count], 'host_name': host_name[0:count], 'host_follow': host_follow[0:count],
-            'host_fan': host_fans[0:count], 'host_weibpo': host_weibo[0:count]}
+    data = {
+        'top_name': top_name[0:count],
+        'top_rank': top_rank[0:count],
+        'top_subtitle': top_subtitle[0:count],
+        'top_reading': top_reading[0:count],
+        'host_name': host_name[0:count],
+        'host_follow': host_follow[0:count],
+        'host_fan': host_fans[0:count],
+        'host_weibpo': host_weibo[0:count]}
     print(data)
     dfl = pd.DataFrame(data)
 
