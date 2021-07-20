@@ -1,5 +1,3 @@
-import re
-
 from bs4 import BeautifulSoup
 import requests
 
@@ -7,8 +5,7 @@ url = 'https://s.weibo.com/top/summary/summary?cate=realtimehot'
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'lxml')
 data = soup.select('#pl_top_realtimehot > table > tbody > tr')
-# print(soup.select('#pl_top_realtimehot > table > tbody > tr > td.td-01.ranktop'))
-# print(data)
+
 for item in data:
     rankTd = item.select("td.td-01.ranktop")
     rank = 0
