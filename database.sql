@@ -1,4 +1,4 @@
-CREATE TABLE `events`
+CREATE TABLE `po_events`
 (
     `id`          BIGINT(20) NOT NULL AUTO_INCREMENT,
     `title`       VARCHAR(100) NULL DEFAULT NULL COMMENT '事件标题' COLLATE 'utf8mb4_general_ci',
@@ -15,7 +15,7 @@ COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
 
-CREATE TABLE `event_time_data`
+CREATE TABLE `po_event_time_data`
 (
     `id`          BIGINT(20) NOT NULL AUTO_INCREMENT,
     `event_id`    BIGINT(20) NOT NULL COMMENT '事件 ID',
@@ -28,7 +28,7 @@ COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
 
-CREATE TABLE `user`
+CREATE TABLE `po_user`
 (
     `id`              BIGINT(20) NOT NULL AUTO_INCREMENT,
     `open_id`         VARCHAR(100) NOT NULL COMMENT '微信用户open_id' COLLATE 'utf8mb4_general_ci',
@@ -47,7 +47,7 @@ CREATE TABLE `user`
 COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 
-CREATE TABLE `user_collect`
+CREATE TABLE `po_user_collect`
 (
     `id`          BIGINT(20) NOT NULL AUTO_INCREMENT,
     `user_id`     BIGINT(20) NOT NULL COMMENT '用户ID',
