@@ -1,4 +1,6 @@
-CREATE TABLE `po_events`
+-- 舆论场 CRY cry_
+
+CREATE TABLE `cry_events`
 (
     `id`          BIGINT(20) NOT NULL AUTO_INCREMENT,
     `title`       VARCHAR(100) NULL DEFAULT NULL COMMENT '事件标题' COLLATE 'utf8mb4_general_ci',
@@ -15,7 +17,7 @@ COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
 
-CREATE TABLE `po_event_time_data`
+CREATE TABLE `cry_event_time_data`
 (
     `id`          BIGINT(20) NOT NULL AUTO_INCREMENT,
     `event_id`    BIGINT(20) NOT NULL COMMENT '事件 ID',
@@ -28,12 +30,12 @@ COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
 
-CREATE TABLE `po_user`
+CREATE TABLE `cry_user`
 (
     `id`              BIGINT(20) NOT NULL AUTO_INCREMENT,
     `nick_name`       VARCHAR(50) NULL DEFAULT NULL COMMENT '用户昵称' COLLATE 'utf8mb4_general_ci',
     `real_name`       VARCHAR(50) NULL DEFAULT NULL COMMENT '真实姓名' COLLATE 'utf8mb4_general_ci',
-    `mobile`          VARCHAR(20) NULL DEFAULT NULL COMMENT '手机号' COLLATE 'utf8mb4_general_ci',
+    `mobile`          VARCHAR(20) NULL DEFAULT NULL COMMENT '手机号',
     `status`          TINYINT(4) NOT NULL DEFAULT '1' COMMENT '用户状态 1-正常 2-禁用',
     `last_login_time` DATETIME NULL DEFAULT NULL COMMENT '上次登录时间',
     `create_time`     DATETIME NOT NULL COMMENT '创建时间',
@@ -41,12 +43,11 @@ CREATE TABLE `po_user`
     `update_time`     DATETIME NULL DEFAULT NULL COMMENT '更新时间',
     `update_user`     VARCHAR(50) NULL DEFAULT NULL COMMENT '更新用户' COLLATE 'utf8mb4_general_ci',
     PRIMARY KEY (`id`) USING BTREE,
-    UNIQUE INDEX `open_id` (`open_id`) USING BTREE
 ) COMMENT='舆论场用户表'
-COLLATE='utf8mb4_general_ci'
+COLLATE='utf8_general_ci'
 ENGINE=InnoDB
 
-CREATE TABLE `po_user_collect`
+CREATE TABLE `cry_user_collect`
 (
     `id`          BIGINT(20) NOT NULL AUTO_INCREMENT,
     `user_id`     BIGINT(20) NOT NULL COMMENT '用户ID',
