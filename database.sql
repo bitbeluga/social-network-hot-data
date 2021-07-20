@@ -31,13 +31,12 @@ ENGINE=InnoDB
 CREATE TABLE `po_user`
 (
     `id`              BIGINT(20) NOT NULL AUTO_INCREMENT,
-    `open_id`         VARCHAR(100) NOT NULL COMMENT '微信用户open_id' COLLATE 'utf8mb4_general_ci',
     `nick_name`       VARCHAR(50) NULL DEFAULT NULL COMMENT '用户昵称' COLLATE 'utf8mb4_general_ci',
     `real_name`       VARCHAR(50) NULL DEFAULT NULL COMMENT '真实姓名' COLLATE 'utf8mb4_general_ci',
     `mobile`          VARCHAR(20) NULL DEFAULT NULL COMMENT '手机号' COLLATE 'utf8mb4_general_ci',
     `status`          TINYINT(4) NOT NULL DEFAULT '1' COMMENT '用户状态 1-正常 2-禁用',
     `last_login_time` DATETIME NULL DEFAULT NULL COMMENT '上次登录时间',
-    `create_time`     DATETIME     NOT NULL COMMENT '创建时间',
+    `create_time`     DATETIME NOT NULL COMMENT '创建时间',
     `create_user`     VARCHAR(50) NULL DEFAULT NULL COMMENT '创建用户' COLLATE 'utf8mb4_general_ci',
     `update_time`     DATETIME NULL DEFAULT NULL COMMENT '更新时间',
     `update_user`     VARCHAR(50) NULL DEFAULT NULL COMMENT '更新用户' COLLATE 'utf8mb4_general_ci',
