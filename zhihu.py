@@ -1,8 +1,6 @@
 # from bs4 import BeautifulSoup
 # import requests
-# from datetime import datetime
-#
-# print("\n""\n""Zhihu start_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+
 #
 # url = 'https://www.zhihu.com/billboard'
 # headers = {
@@ -22,14 +20,13 @@
 # }
 # print(result)
 
-# print("Zhihu end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
-
 
 import re
 import requests
-import datetime
 import pandas as pd
+from datetime import datetime
 
+print("\n""\n""Zhihu start_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 Domain_Name = 'https:'
 headers = {
     'Referer': "https://www.zhihu.com/billboard",
@@ -54,6 +51,8 @@ for i in range(len(content)):
     lst = [content[i], rank, hot[i], str(url[i]).replace('u002F', '')]
     dts.append(lst)
 df = pd.DataFrame(dts, columns=['name', 'rank', 'hot', 'url'])
-df.to_excel('./zhihu' + str(datetime.datetime.now().strftime('%Y%m%d')) + '.xlsx',
+df.to_excel('./zhihu' + str(datetime.now().strftime('%Y%m%d')) + '.xlsx',
             encoding='gbk')  # ??excel?
-# print('????')
+print('????')
+
+print("Zhihu end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))

@@ -1,0 +1,3 @@
+[console_scripts]
+now = now.main:main
+

@@ -1,0 +1,15 @@
+MANIFEST.in
+README
+README.rst
+setup.cfg
+setup.py
+now/__init__.py
+now/config.py
+now/exceptions.py
+now/main.py
+now.egg-info/PKG-INFO
+now.egg-info/SOURCES.txt
+now.egg-info/dependency_links.txt
+now.egg-info/entry_points.txt
+now.egg-info/top_level.txt
+scripts/now

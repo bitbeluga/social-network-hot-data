@@ -1,8 +1,13 @@
+import datetime
+
 import requests
 import re
 import time
 import json
 import pandas as pd
+from datetime import datetime
+
+print("\n""\n""WeiboHotTopic start_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
 global false, null, true
 false = null = true = ''
@@ -16,6 +21,7 @@ host_follow = []  # 发起者关注
 host_fans = []  # 话题者粉丝
 host_weibo = []  # 话题者微博数
 result = []
+
 
 def get_one_page(url):
     headers = {
@@ -136,3 +142,5 @@ def main():
 
 
 main()
+
+print("WeiboHotTopic end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))

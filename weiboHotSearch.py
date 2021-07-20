@@ -1,9 +1,13 @@
-from bs4 import BeautifulSoup
+
 import requests
+from bs4 import BeautifulSoup
+from datetime import datetime
+
+print("\n""\n""WeiboHotSearch start_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
 
 url = 'https://s.weibo.com/top/summary/summary?cate=realtimehot'
 response = requests.get(url)
-soup = BeautifulSoup(response.text, 'lxml')
+soup = BeautifulSoup(response.text, "lxml")
 data = soup.select('#pl_top_realtimehot > table > tbody > tr')
 
 for item in data:
@@ -24,3 +28,5 @@ for item in data:
         'url': 'https://s.weibo.com/' + item.select("td.td-02 > a")[0].get('href'),
     }
     print(result)
+
+print("WeiboHotSearch end_at:", datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
