@@ -14,8 +14,8 @@ data = soup.select(
 for item in data:
     result = {
         'rank': item.select('tr > td')[0].get_text(),
+        'count': item.select('tr > td')[2].get_text(),
         'title': item.select('tr > td.al > a')[0].get_text(),
-        'hotCount': item.select('tr > td')[2].get_text(),
     }
     print(result)
 #

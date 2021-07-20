@@ -7,10 +7,15 @@ headers = {
 response = requests.get(url, headers=headers)
 soup = BeautifulSoup(response.text)
 data = soup.select(
-    '#page > div.c-d.c-d-e > div.Zd-p-Sc > div:nth-child(1) > div.cc-dc-c > div > div.jc-c > table > tbody > tr > td.al > a')
+    '#page > div.c-d.c-d-e > div.Zd-p-Sc > div:nth-child(1) > div.cc-dc-c > div > div.jc-c > table > tbody > tr')
 for item in data:
+    a = item.select("td.al > a")
+    name = ''
+    for x1 in a:
+        name = x1.get_text()
     result = {
-        'title': item.get_text(),
-        'link': item.get('href')
+        'rank': item.select('td')[0].get_text(),
+        'count': item.select('td')[2].get_text(),
+        'name': name,
     }
     print(result)
