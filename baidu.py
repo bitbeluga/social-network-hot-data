@@ -17,7 +17,7 @@ for item in data:
     rank = rank + 1
     result = {
         'rank': rank,
-        'name': item.select('div.content_1YWBm > a')[0].get_text(),
+        'name': item.select('div.content_1YWBm > a')[0].get_text().strip(),
         'hotCount': item.select('div.trend_2RttY.hide-icon > div.hot-index_1Bl1a')[0].get_text(),
         'link': item.select('div.content_1YWBm > a')[0].get('href'),
     }
